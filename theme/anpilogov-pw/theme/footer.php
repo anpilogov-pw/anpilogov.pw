@@ -10,12 +10,9 @@
  */
 
 ?>
-
 	</div><!-- #content -->
-
 	<?php get_template_part( 'template-parts/layout/footer', 'content' ); ?>
-
-</div><!-- #page -->
+</div><!-- #root -->
 
 <?php wp_footer(); ?>
 

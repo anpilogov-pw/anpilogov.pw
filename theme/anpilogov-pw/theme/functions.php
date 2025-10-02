@@ -59,28 +59,14 @@ if ( ! function_exists( 'anpilogov_pw_setup' ) ) :
 		 */
 		load_theme_textdomain( 'anpilogov-pw', get_template_directory() . '/languages' );
 
-		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
-
-		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
 		add_theme_support( 'title-tag' );
-
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 */
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus(
 			array(
-				'menu-1' => __( 'Primary', 'anpilogov-pw' ),
+				'menu-1' => __( 'Header Menu', 'anpilogov-pw' ),
 				'menu-2' => __( 'Footer Menu', 'anpilogov-pw' ),
 			)
 		);
@@ -105,41 +91,14 @@ if ( ! function_exists( 'anpilogov_pw_setup' ) ) :
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
-
-		// Enqueue editor styles.
 		add_editor_style( 'style-editor.css' );
 		add_editor_style( 'style-editor-extra.css' );
-
-		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
-
-		// Remove support for block templates.
 		remove_theme_support( 'block-templates' );
 	}
 endif;
 add_action( 'after_setup_theme', 'anpilogov_pw_setup' );
-
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function anpilogov_pw_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => __( 'Footer', 'anpilogov-pw' ),
-			'id'            => 'sidebar-1',
-			'description'   => __( 'Add widgets here to appear in your footer.', 'anpilogov-pw' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-}
-add_action( 'widgets_init', 'anpilogov_pw_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
@@ -211,6 +170,33 @@ function anpilogov_pw_modify_heading_levels( $args, $block_type ) {
 }
 add_filter( 'register_block_type_args', 'anpilogov_pw_modify_heading_levels', 10, 2 );
 
+
+function anpilogov_pw_init() {
+	// Disabling emoji scripts and styles
+	remove_action('wp_head', 'print_emoji_detection_script', 7);
+	remove_action('admin_print_scripts', 'print_emoji_detection_script');
+	remove_action('wp_print_styles', 'print_emoji_styles');
+	remove_action('admin_print_styles', 'print_emoji_styles');
+	remove_filter('the_content_feed', 'wp_staticize_emoji');
+	remove_filter('comment_text_rss', 'wp_staticize_emoji');
+	remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
+
+	add_filter('tiny_mce_plugins', function ($plugins) {
+		if (is_array($plugins)) {
+			return array_diff($plugins, ['wpemoji']);
+		}
+		return [];
+	});
+
+	// Disable DNS prefetch on emoji CDN
+	add_filter('emoji_svg_url', '__return_false');
+
+	// Remove wordpress generated version
+	remove_action( 'wp_head', 'wp_generator' );
+	add_filter( 'the_generator', '__return_empty_string' );
+}
+add_action('init', 'anpilogov_pw_init');
+
 /**
  * Custom template tags for this theme.
  */
@@ -220,3 +206,8 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Functions which enhance the ACF Hooks.
+ */
+require get_template_directory() . '/inc/template-acf.php';
