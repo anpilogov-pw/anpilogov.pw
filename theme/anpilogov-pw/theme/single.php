@@ -10,41 +10,15 @@
 get_header();
 ?>
 
-	<section id="primary">
-		<main id="main">
-
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-				get_template_part( 'template-parts/content/content', 'single' );
-
-				if ( is_singular( 'post' ) ) {
-					// Previous/next post navigation.
-					the_post_navigation(
-						array(
-							'next_text' => '<span aria-hidden="true">' . __( 'Next Post', 'anpilogov-pw' ) . '</span> ' .
-								'<span class="sr-only">' . __( 'Next post:', 'anpilogov-pw' ) . '</span> <br/>' .
-								'<span>%title</span>',
-							'prev_text' => '<span aria-hidden="true">' . __( 'Previous Post', 'anpilogov-pw' ) . '</span> ' .
-								'<span class="sr-only">' . __( 'Previous post:', 'anpilogov-pw' ) . '</span> <br/>' .
-								'<span>%title</span>',
-						)
-					);
-				}
-
-				// If comments are open, or we have at least one comment, load
-				// the comment template.
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}
-
-				// End the loop.
-			endwhile;
-			?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
-
+<main class="container">
 <?php
-get_footer();
+if (have_posts()):
+    while (have_posts()):
+        the_post();
+        the_content();
+    endwhile;
+endif;
+?>    
+</main>
+
+<?php get_footer(); ?>

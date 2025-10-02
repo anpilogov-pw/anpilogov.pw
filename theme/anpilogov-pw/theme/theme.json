@@ -6,28 +6,75 @@
 			"palette": [
 				{
 					"slug": "background",
-					"color": "#ffffff",
+					"color": "rgba(255,255,255,1)",
 					"name": "Background"
 				},
 				{
 					"slug": "foreground",
-					"color": "#404040",
+					"color": "rgba(17,24,39,1)",
 					"name": "Foreground"
 				},
-				{
-					"slug": "primary",
-					"color": "#b91c1c",
-					"name": "Primary"
+				{ 
+					"slug": "primary", 
+					"color": "rgba(17,24,39,1)", 
+					"name": "Primary" 
 				},
 				{
-					"slug": "secondary",
-					"color": "#15803d",
-					"name": "Secondary"
+					"slug": "white",
+					"color": "rgba(255,255,255,1)",
+					"name": "White"
 				},
 				{
-					"slug": "tertiary",
-					"color": "#0369a1",
-					"name": "Tertiary"
+					"slug": "purple-700",
+					"color": "rgba(126,34,206,1)",
+					"name": "Purple 700"
+				},
+				{
+					"slug": "cold-gray-900",
+					"color": "rgba(17,24,39,1)",
+					"name": "Cold Gray 900"
+				},
+				{
+					"slug": "cold-gray-600",
+					"color": "rgba(75,85,99,1)",
+					"name": "Cold Gray 600"
+				},
+				{
+					"slug": "cold-gray-500",
+					"color": "rgba(107,114,128,1)",
+					"name": "Cold Gray 500"
+				},
+				{
+					"slug": "cold-gray-400",
+					"color": "rgba(156,163,175,1)",
+					"name": "Cold Gray 400"
+				},
+				{
+					"slug": "cold-gray-300",
+					"color": "rgba(209,213,219,1)",
+					"name": "Cold Gray 300"
+				},
+				{
+					"slug": "cold-gray-200",
+					"color": "rgba(229,231,235,1)",
+					"name": "Cold Gray 200"
+				},
+				{
+					"slug": "cold-gray-100",
+					"color": "rgba(243,244,246,1)",
+					"name": "Cold Gray 100"
+				},
+				{
+					"slug": "cold-gray-50",
+					"color": "rgba(249,250,251,1)",
+					"name": "Cold Gray 50"
+				}
+			],
+			"gradients": [
+				{
+					"slug": "purple-blue",
+					"gradient": "linear-gradient(to bottom, rgba(126,34,206,0.494) 0%, rgba(61,87,141,0.241) 100%)",
+					"name": "Purple Blue"
 				}
 			]
 		},

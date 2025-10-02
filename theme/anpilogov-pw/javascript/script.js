@@ -8,3 +8,9 @@
  * For esbuild documentation, please see:
  * https://esbuild.github.io/
  */
+
+function go(...params) {
+    console.log(params);
+}
+
+go(1);
