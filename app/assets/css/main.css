@@ -1,0 +1,16 @@
+html,
+body {
+  background-color: #f9fafb;
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
+
+#apw-root {
+  padding: 0 16px;
+}
+
+@media screen and (mix-width: 768px) {
+  #apw-root {
+    padding: 0 12px;
+  }
+}

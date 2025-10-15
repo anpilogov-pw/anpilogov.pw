@@ -1,16 +1,13 @@
 <template>
   <div>
-    <AppSection id="#projects">
-      <h2>Компании</h2>
-    </AppSection>
-    <AppSection id="#reviews">
-      <h2>Отзывы</h2>
-    </AppSection>
-    <AppSection id="#coop">
-      <h2>Сотрудничество</h2>
-    </AppSection>
-    <AppSection>
-      <h2>Блог</h2>
-    </AppSection>
+    <AppHero />
+    <AppDevider />
+    <AppSection id="companies" title="Компании" />
+    <AppDevider />
+    <AppSection id="reviews" title="Отзывы" />
+    <AppDevider />
+    <AppSection id="coop" title="Сотрудничество" />
+    <AppDevider />
+    <AppSection title="Блог" />
   </div>
 </template>
