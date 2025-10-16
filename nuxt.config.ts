@@ -27,6 +27,7 @@ export default defineNuxtConfig({
     "@nuxtjs/sitemap",
     "@nuxtjs/robots",
     "@nuxtjs/i18n",
+    "@nuxt/content",
   ],
   image: {
     quality: 80,
@@ -44,12 +45,16 @@ export default defineNuxtConfig({
     },
   },
   i18n: {
-    legacy: false,
-    flatJson: true,
     defaultLocale: "ru",
     locales: [
-      { code: "ru", language: "ru-RU", file: "ru.json" },
-      { code: "en", language: "en-EN", file: "en.json" },
+      { code: "ru", language: "ru-RU", file: "ru.json", name: "Русский" },
+      { code: "en", language: "en-US", file: "en.json", name: "English" },
     ],
+  },
+  content: {
+    watch: {
+      port: 4000,
+      showURL: true,
+    },
   },
 });

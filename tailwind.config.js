@@ -14,8 +14,10 @@ module.exports = {
         return sizes;
       })(),
       fontFamily: {
-        heading: ["Roboto", "system-ui", "sans-serif"],
+        roboto: ["Roboto", "system-ui", "sans-serif"],
         sans: ["Montserrat", "system-ui", "sans-serif"],
+        mono: ["RobotoMono", "system-ui", "sans-serif"],
+        inter: ["Inter", "system-ui", "sans-serif"],
       },
       container: {
         center: true,
@@ -28,6 +30,8 @@ module.exports = {
       },
       boxShadow: {
         "apw-hero":
+          "0 19px 5px 0 rgba(0, 0, 0, 0.00), 0 12px 5px 0 rgba(0, 0, 0, 0.01), 0 7px 4px 0 rgba(0, 0, 0, 0.05), 0 3px 3px 0 rgba(0, 0, 0, 0.09), 0 1px 2px 0 rgba(0, 0, 0, 0.10)",
+        "apw-coop-card":
           "0 19px 5px 0 rgba(0, 0, 0, 0.00), 0 12px 5px 0 rgba(0, 0, 0, 0.01), 0 7px 4px 0 rgba(0, 0, 0, 0.05), 0 3px 3px 0 rgba(0, 0, 0, 0.09), 0 1px 2px 0 rgba(0, 0, 0, 0.10)",
       },
     },

@@ -1,1 +1,10 @@
-{}
+{
+  "hero.title": "Artem Anpilogov",
+  "hero.title.highlight": "Frontend Developer",
+  "hero.text": "I specialize in building fast, user-friendly, and maintainable web applications using modern technologies. My work combines an engineering mindset with a keen eye for interface details to create products that are reliable under the hood and intuitive on the surface.",
+  "hero.action.companies": "Companies",
+  "hero.action.reviews": "Reviews",
+  "hero.img.alt": "Artem Anpilogov — Frontend Developer",
+
+  "tech.title": "Technologies I use in project development"
+}

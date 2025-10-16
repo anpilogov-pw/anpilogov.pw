@@ -16,13 +16,12 @@
           </UiButtonLink>
         </div>
       </div>
-      <NuxtPicture
+      <NuxtImg
         class="apw-hero__image"
         src="/img/hero-desktop.jpg"
         :alt="$t('hero.img.alt')"
         :placeholder="15"
         format="webp"
-        sizes="100vw sm:282px md:380px"
         loading="lazy"
         decoding="async"
         preload
@@ -90,9 +89,6 @@
   @apply w-full h-[320px] rounded-t-xl md:rounded-t-none;
   @apply md:rounded-r-xl overflow-hidden;
   @apply md:w-[282px] md:h-full xl:w-[380px];
-
-  ::v-deep(img) {
-    @apply h-full w-full object-cover object-top md:object-center;
-  }
+  @apply object-cover object-[0_20%] md:object-center;
 }
 </style>

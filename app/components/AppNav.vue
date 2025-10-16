@@ -1,48 +1,39 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
 
+type Props = {
+  showLang?: boolean;
+  showMobileMenu: boolean;
+};
+
 const route = useRoute();
 
-const isMenuOpen = ref<boolean>(false);
+const props = withDefaults(defineProps<Props>(), {
+  showLang: false,
+});
+
 const isHome = computed<boolean>(() => route.path === "/");
+
 const navClasses = computed<Record<string, boolean>>(() => {
   return {
-    "apw-nav_open": isMenuOpen.value,
+    "apw-nav_open": props.showMobileMenu,
   };
 });
-
-let isLocked: ReturnType<typeof useScrollLock> | null = null;
-
-onMounted(() => {
-  isLocked = useScrollLock(document.body);
-  watch(isMenuOpen, (open) => {
-    if (isLocked) isLocked.value = open;
-  });
-});
-
-watch(
-  () => route.fullPath,
-  () => {
-    isMenuOpen.value = false;
-  }
-);
 </script>
 
 <template>
-  <div class="apw-menu">
-    <UiButtonMenu v-model="isMenuOpen" />
-    <nav class="apw-nav" :class="navClasses">
-      <NuxtLink :to="isHome ? '#companies' : '/#companies'">Компании</NuxtLink>
-      <NuxtLink :to="isHome ? '#reviews' : '/#reviews'">Отзывы</NuxtLink>
-      <NuxtLink :to="isHome ? '#coop' : '/#coop'">Сотрудничество</NuxtLink>
-      <NuxtLink to="/blog">Блог</NuxtLink>
-    </nav>
-  </div>
+  <nav class="apw-nav" :class="navClasses">
+    <NuxtLink :to="isHome ? '#companies' : '/#companies'">Компании</NuxtLink>
+    <NuxtLink :to="isHome ? '#reviews' : '/#reviews'">Отзывы</NuxtLink>
+    <NuxtLink :to="isHome ? '#coop' : '/#coop'">Сотрудничество</NuxtLink>
+    <NuxtLink to="/blog">Блог</NuxtLink>
+    <UiLangSwitcher v-if="props.showLang" />
+  </nav>
 </template>
 
-<style lang="scss" src="">
+<style lang="scss" scoped>
 .apw-nav {
-  @apply flex flex-col items-start justify-start gap-4;
+  @apply flex flex-col items-start justify-start gap-4 z-30;
   @apply max-md:opacity-0 
           max-md:invisible 
           max-md:pointer-events-none 
@@ -56,11 +47,7 @@ watch(
   @apply max-md:top-11 
           max-[744px]:container 
           max-md:p-4;
-  @apply md:flex-row md:gap-6 md:items-center md:justify-end xl:justify-center;
-}
-
-.apw-nav_open {
-  @apply max-md:opacity-100 max-md:visible max-md:pointer-events-auto;
+  @apply md:flex-row md:gap-5 md:items-center md:justify-end xl:justify-center;
 }
 
 .apw-nav a {
@@ -69,7 +56,7 @@ watch(
   @apply px-2 py-1 rounded-full bg-gray-50;
 }
 
-.apw-menu {
-  @apply flex items-center;
+.apw-nav_open {
+  @apply max-md:opacity-100 max-md:visible max-md:pointer-events-auto;
 }
 </style>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
+import { CONFIG } from "~/constants";
 
 const headerRef = ref<HTMLElement | null>(null);
 const { y } = useScroll(window);
@@ -13,9 +14,9 @@ const isSticky = computed(() => y.value > 0);
   >
     <div class="apw-header__wrapper">
       <AppLogo />
-      <AppNav />
-      <a class="apw-header__email" href="mailto:contact@anpilogov.pw">
-        contact@anpilogov.pw
+      <AppMenu />
+      <a class="apw-header__email" :href="`mailto:${CONFIG.email}`">
+        {{ CONFIG.email }}
       </a>
     </div>
   </header>
