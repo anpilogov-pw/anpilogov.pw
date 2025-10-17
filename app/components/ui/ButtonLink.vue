@@ -29,7 +29,7 @@ const handleMouseMove = useThrottleFn((event: MouseEvent) => {
 </script>
 
 <template>
-  <NuxtLink
+  <NuxtLinkLocale
     class="apw-button-link"
     :class="buttonLinkClasses"
     :to="props.to"
@@ -37,7 +37,7 @@ const handleMouseMove = useThrottleFn((event: MouseEvent) => {
   >
     <slot></slot>
     <span class="apw-button-link__ripple" :style="ripplePos"></span>
-  </NuxtLink>
+  </NuxtLinkLocale>
 </template>
 
 <style scoped>

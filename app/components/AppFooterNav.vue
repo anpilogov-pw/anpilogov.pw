@@ -16,10 +16,21 @@ const isHome = computed<boolean>(() => route.path === "/");
 
 <template>
   <nav class="apw-nav">
-    <NuxtLink :to="isHome ? '#companies' : '/#companies'">Компании</NuxtLink>
-    <NuxtLink :to="isHome ? '#reviews' : '/#reviews'">Отзывы</NuxtLink>
-    <NuxtLink :to="isHome ? '#coop' : '/#coop'">Сотрудничество</NuxtLink>
-    <NuxtLink to="/blog">Блог</NuxtLink>
+    <NuxtLinkLocale :to="isHome ? '#companies' : '/#companies'">
+      {{ $t("nav.link.companies") }}
+    </NuxtLinkLocale>
+    <NuxtLinkLocale :to="isHome ? '#reviews' : '/#reviews'">
+      {{ $t("nav.link.reviews") }}
+    </NuxtLinkLocale>
+    <NuxtLinkLocale :to="isHome ? '#coop' : '/#coop'">
+      {{ $t("nav.link.coop") }}
+    </NuxtLinkLocale>
+    <NuxtLinkLocale to="/blog">
+      {{ $t("nav.link.blog") }}
+    </NuxtLinkLocale>
+    <NuxtLinkLocale to="/privacy">
+      {{ $t("nav.link.privacy") }}
+    </NuxtLinkLocale>
     <UiLangSwitcher v-if="props.showLang" />
   </nav>
 </template>

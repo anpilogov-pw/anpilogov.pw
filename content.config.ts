@@ -47,5 +47,13 @@ export default defineContentConfig({
         cover: z.string().optional(),
       }),
     }),
+    privacy_ru: defineCollection({
+      type: "page",
+      source: "ru/privacy/*.md",
+    }),
+    privacy_en: defineCollection({
+      type: "page",
+      source: "en/privacy/*.md",
+    }),
   },
 });

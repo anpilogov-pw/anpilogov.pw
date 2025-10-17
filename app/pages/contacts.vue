@@ -1,5 +1,7 @@
 <template>
-  <div class="p-8 text-center">
-    <h1 class="text-3xl font-bold text-blue-600">Contacts работает 🚀</h1>
+  <div id="apw-contacts">
+    <AppDevider />
+    <AppSection :title="$t('section.title.blog')" tag="h1" />
+    <AppDevider />
   </div>
 </template>

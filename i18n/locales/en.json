@@ -1,4 +1,18 @@
 {
+  "nav.link.companies": "Companies",
+  "nav.link.reviews": "Reviews",
+  "nav.link.coop": "Partnership",
+  "nav.link.blog": "Blog",
+  "nav.link.privacy": "Privacy",
+
+  "breadcrumbs.home": "Главная",
+  "breadcrumbs.blog": "Блог",
+
+  "section.title.companies": "Companies",
+  "section.title.reviews": "Reviews",
+  "section.title.coop": "Partnership",
+  "section.title.blog": "Blog",
+
   "hero.title": "Artem Anpilogov",
   "hero.title.highlight": "Frontend Developer",
   "hero.text": "I specialize in building fast, user-friendly, and maintainable web applications using modern technologies. My work combines an engineering mindset with a keen eye for interface details to create products that are reliable under the hood and intuitive on the surface.",
@@ -6,5 +20,10 @@
   "hero.action.reviews": "Reviews",
   "hero.img.alt": "Artem Anpilogov — Frontend Developer",
 
-  "tech.title": "Technologies I use in project development"
+  "tech.title": "Technologies I use in project development",
+
+  "coop.link.title": "Contact",
+  "coop.link.aria": "Contact by direction",
+
+  "article.cover.alt": "Article cover"
 }

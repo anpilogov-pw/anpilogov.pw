@@ -23,10 +23,16 @@ const navClasses = computed<Record<string, boolean>>(() => {
 
 <template>
   <nav class="apw-nav" :class="navClasses">
-    <NuxtLink :to="isHome ? '#companies' : '/#companies'">Компании</NuxtLink>
-    <NuxtLink :to="isHome ? '#reviews' : '/#reviews'">Отзывы</NuxtLink>
-    <NuxtLink :to="isHome ? '#coop' : '/#coop'">Сотрудничество</NuxtLink>
-    <NuxtLink to="/blog">Блог</NuxtLink>
+    <NuxtLinkLocale :to="isHome ? '#companies' : '/#companies'">
+      {{ $t("nav.link.companies") }}
+    </NuxtLinkLocale>
+    <NuxtLinkLocale :to="isHome ? '#reviews' : '/#reviews'">
+      {{ $t("nav.link.reviews") }}
+    </NuxtLinkLocale>
+    <NuxtLinkLocale :to="isHome ? '#coop' : '/#coop'">
+      {{ $t("nav.link.coop") }}
+    </NuxtLinkLocale>
+    <NuxtLinkLocale to="/blog">{{ $t("nav.link.blog") }}</NuxtLinkLocale>
     <UiLangSwitcher v-if="props.showLang" />
   </nav>
 </template>
@@ -45,7 +51,7 @@ const navClasses = computed<Record<string, boolean>>(() => {
           max-md:h-dvh
         max-md:bg-gray-50;
   @apply max-md:top-11 
-          max-[744px]:container 
+          max-md:container 
           max-md:p-4;
   @apply md:flex-row md:gap-5 md:items-center md:justify-end xl:justify-center;
 }

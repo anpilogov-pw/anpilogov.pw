@@ -22,7 +22,6 @@
         :alt="$t('hero.img.alt')"
         :placeholder="15"
         format="webp"
-        loading="lazy"
         decoding="async"
         preload
       />

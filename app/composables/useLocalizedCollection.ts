@@ -1,9 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useRoute } from "#imports";
 import type { Collections } from "@nuxt/content";
 import { useI18n } from "vue-i18n";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const useLocalizedCollection = <T>(baseName: string, orderKey: any) => {
+export const useLocalizedCollection = <T>(
+  baseName: string,
+  orderKey: any,
+  limit: number = 3
+) => {
   const route = useRoute();
   const { locale } = useI18n();
 
@@ -22,12 +26,14 @@ export const useLocalizedCollection = <T>(baseName: string, orderKey: any) => {
       let content = await queryCollection(collection)
         .where("draft", "=", false)
         .order(orderKey, "DESC")
+        .limit(limit)
         .all();
 
       if ((!content || content.length === 0) && locale.value !== "ru") {
         content = await queryCollection(`${baseName}_ru` as keyof Collections)
           .where("draft", "=", false)
           .order(orderKey, "DESC")
+          .limit(limit)
           .all();
       }
 

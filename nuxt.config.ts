@@ -2,9 +2,9 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   css: [
-    "./app/assets/css/main.css",
-    "./app/assets/css/fonts.css",
-    "./app/assets/css/tailwind.postcss.css",
+    "./app/assets/css/main.scss",
+    "./app/assets/css/fonts.scss",
+    "./app/assets/css/tailwind.postcss.scss",
   ],
   site: {
     url: "https://anpilogov.pw/",
@@ -55,6 +55,14 @@ export default defineNuxtConfig({
     watch: {
       port: 4000,
       showURL: true,
+    },
+    build: {
+      markdown: {
+        highlight: {
+          theme: "monokai",
+          preload: ["vue", "html", "ts", "js", "bash", "json", "scss", "yaml"],
+        },
+      },
     },
   },
 });
