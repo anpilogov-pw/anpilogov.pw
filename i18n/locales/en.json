@@ -1,4 +1,16 @@
 {
+  "page.index.title": "AnpilogovPW — Frontend Developer Creating Clear and Fast Interfaces",
+  "page.index.description": "My name is Artyom Anpilogov. I specialize in building fast, user-friendly, and maintainable web applications using modern technologies. I combine an engineering mindset with attention to interface details — making products reliable inside and intuitive outside.",
+
+  "page.contacts.title": "Contacts — Get in Touch with Artyom Anpilogov",
+  "page.contacts.description": "Feel free to reach out to discuss a project or collaboration. Telegram, WhatsApp, email — always open for professional communication.",
+
+  "page.blog.title": "Blog — Development Without Fluff | AnpilogovPW",
+  "page.blog.description": "Sharing experience in frontend development: architecture, optimization, and insights into Vue, React, and TypeScript. Honest and to the point.",
+
+  "page.privacy.title": "Privacy Policy — AnpilogovPW",
+  "page.privacy.description": "How this website collects, uses, and protects user data. Transparent and fully compliant with the law.",
+
   "nav.link.companies": "Companies",
   "nav.link.testimonials": "Reviews",
   "nav.link.coop": "Partnership",

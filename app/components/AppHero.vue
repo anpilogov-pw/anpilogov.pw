@@ -8,10 +8,10 @@
         </h1>
         <p class="apw-hero__text">{{ $t("hero.text") }}</p>
         <div class="apw-hero__actions">
-          <UiButtonLink to="#companies">
+          <UiButtonLink to="/#companies">
             {{ $t("hero.action.companies") }}
           </UiButtonLink>
-          <UiButtonLink to="#testimonials" type="outline">
+          <UiButtonLink to="/#testimonials" type="outline">
             {{ $t("hero.action.testimonials") }}
           </UiButtonLink>
         </div>
@@ -24,6 +24,7 @@
         format="webp"
         decoding="async"
         preload
+        fetchpriority="high"
       />
     </div>
   </section>

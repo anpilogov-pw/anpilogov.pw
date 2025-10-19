@@ -2,7 +2,7 @@
 fullname: Королёв Яков
 post: АРТ-директор
 organization: ИД Московский комсомолец
-avatar: /img/cover.png
+avatar: /img/cover.jpg
 testimonial: Отличается вниманием к деталям и архитектуре. Код понятный, поддерживаемый и работает без сюрпризов.
 date: 2024-7-15
 draft: false

@@ -13,13 +13,18 @@ const breadcrumbs = computed(() => {
     },
   ];
 });
+
+useSeoMeta({
+  title: t("page.blog.title"),
+  description: t("page.blog.description"),
+});
 </script>
 
 <template>
   <div>
     <AppDevider />
     <AppSection :title="$t('section.title.blog')" tag="h1">
-      <AppBlog :post-limit="-1" />
+      <AppBlog :post-limit="-1" card-title-tag="h2" />
     </AppSection>
     <AppDevider />
   </div>

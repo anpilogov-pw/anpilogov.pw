@@ -3,10 +3,12 @@ import type { TBlogPost } from "~/types/content";
 
 type Props = {
   postLimit?: number;
+  cardTitleTag?: "h2" | "h3";
 };
 
 const props = withDefaults(defineProps<Props>(), {
   postLimit: 6,
+  cardTitleTag: "h3",
 });
 
 const { data: posts } = useLocalizedCollection<TBlogPost[]>(
@@ -20,7 +22,7 @@ const { data: posts } = useLocalizedCollection<TBlogPost[]>(
   <div class="apw-blog">
     <ul class="apw-blog-list">
       <li v-for="post in posts" :key="post.id" class="apw-blog-list__item">
-        <UiBlogCard :post="post" />
+        <UiBlogCard :post="post" :card-title-tag="props.cardTitleTag" />
       </li>
     </ul>
   </div>

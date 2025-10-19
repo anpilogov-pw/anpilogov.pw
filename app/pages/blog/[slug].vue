@@ -79,12 +79,12 @@ useSeoMeta({
                 decoding="async"
                 :alt="`${$t('article.cover.alt')}: ${post?.title}`"
                 preload
+                fetchpriority="high"
                 @error="onImgError"
               />
             </hgroup>
 
             <ContentRenderer v-if="post" :value="post" class="apw-post__body" />
-            <hr />
             <time :datetime="post?.date">{{ formattedDate(post?.date) }}</time>
           </article>
         </div>

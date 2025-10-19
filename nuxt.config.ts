@@ -2,9 +2,9 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   css: [
+    "./app/assets/css/tailwind.postcss.scss",
     "./app/assets/css/main.scss",
     "./app/assets/css/fonts.scss",
-    "./app/assets/css/tailwind.postcss.scss",
   ],
   site: {
     url: "https://anpilogov.pw/",

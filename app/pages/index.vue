@@ -1,3 +1,25 @@
+<script lang="ts" setup>
+const { t } = useI18n();
+
+const breadcrumbs = computed(() => {
+  return [
+    {
+      label: t("breadcrumbs.home"),
+      to: `/`,
+    },
+    {
+      label: t("breadcrumbs.blog"),
+      to: null,
+    },
+  ];
+});
+
+useSeoMeta({
+  title: t("page.index.title"),
+  description: t("page.index.description"),
+});
+</script>
+
 <template>
   <div>
     <AppHero />

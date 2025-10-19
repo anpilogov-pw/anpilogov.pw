@@ -6,9 +6,12 @@ const { localizedPath } = useLocalPath();
 
 type Props = {
   post: TBlogPost;
+  cardTitleTag?: "h2" | "h3";
 };
 
-const props = defineProps<Props>();
+const props = withDefaults(defineProps<Props>(), {
+  cardTitleTag: "h3",
+});
 
 const fallback = "/img/fallback.jpg";
 const imageSrc = ref(props.post.cover?.trim() || fallback);
@@ -47,7 +50,7 @@ const formattedDate = computed(() => {
     </header>
     <div class="apw-blog-card__hgroup">
       <NuxtLinkLocale :to="localizedPath(props.post.path)">
-        <h3>{{ props.post.title }}</h3>
+        <component :is="props.cardTitleTag">{{ props.post.title }}</component>
         <p>{{ props.post.description }}</p>
       </NuxtLinkLocale>
     </div>
@@ -75,10 +78,11 @@ const formattedDate = computed(() => {
 }
 
 .apw-blog-card__header time {
-  @apply font-mono font-bold text-3 leading-[120%] text-gray-400;
+  @apply font-mono font-bold text-3 leading-[120%] text-gray-500;
 }
 
-.apw-blog-card__hgroup h3 {
+.apw-blog-card__hgroup h3,
+.apw-blog-card__hgroup h2 {
   @apply font-sans font-bold text-4.5 leading-[120%] text-gray-900 my-2;
   @apply line-clamp-2;
 }

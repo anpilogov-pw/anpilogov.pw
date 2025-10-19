@@ -3,7 +3,7 @@ import type { Collections } from "@nuxt/content";
 import type { TCollection } from "~/types/content";
 
 const route = useRoute();
-const { locale } = useI18n();
+const { locale, t } = useI18n();
 
 const collectionName = computed<keyof Collections>(() => {
   return (
@@ -15,6 +15,11 @@ const { data: page } = await useAsyncData(
   route.path,
   () => queryCollection(collectionName.value).first() as Promise<TCollection>
 );
+
+useSeoMeta({
+  title: t("page.privacy.title"),
+  description: t("page.privacy.description"),
+});
 </script>
 
 <template>
