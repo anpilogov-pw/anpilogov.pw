@@ -37,10 +37,10 @@ const formattedDate = computed(() => {
     <header class="apw-blog-card__header">
       <NuxtImg
         :src="imageSrc"
+        format="webp"
         width="224"
         height="120"
         :placeholder="fallback"
-        format="webp"
         loading="lazy"
         decoding="async"
         :alt="`${$t('article.cover.alt')}: ${props.post.title}`"

@@ -18,13 +18,14 @@
       </div>
       <NuxtImg
         class="apw-hero__image"
-        src="/img/hero-desktop.jpg"
-        :alt="$t('hero.img.alt')"
-        :placeholder="15"
+        src="/img/hero.jpg"
         format="webp"
-        decoding="async"
         preload
         fetchpriority="high"
+        loading="eager"
+        :alt="$t('hero.img.alt')"
+        :placeholder="15"
+        decoding="async"
       />
     </div>
   </section>

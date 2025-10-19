@@ -44,7 +44,7 @@ export type TBlogPost = TCollection & {
   date: string;
   tags: string[];
   draft: boolean;
-  cover?: string;
+  cover: string;
 };
 
 export type TCoopPost = TCollection & {

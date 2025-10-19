@@ -43,9 +43,9 @@ const formattedDate = computed(() => {
       <NuxtImg
         v-if="!hasImageError && imageSrc"
         :src="imageSrc"
+        format="webp"
         :alt="props.post.fullname"
         class="app-testimonial-card__avatar"
-        format="webp"
         width="64"
         height="64"
         loading="lazy"

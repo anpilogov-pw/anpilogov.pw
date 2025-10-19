@@ -7,7 +7,7 @@ defineProps<{
 
 <template>
   <ul v-if="tags?.length" class="app-tags">
-    <li v-for="tag in tags" :key="`${itemId || 'tag'}-${tag}`" class="">
+    <li v-for="tag in tags" :key="`${itemId || 'tag'}-${tag}`">
       <span class="app-tag">#{{ tag }}</span>
     </li>
   </ul>

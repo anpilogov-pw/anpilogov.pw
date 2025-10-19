@@ -38,8 +38,9 @@ export default defineNuxtConfig({
     "@nuxtjs/critters",
   ],
   image: {
+    provider: "ipx",
     quality: 80,
-    format: ["webp", "jpg", "png"],
+    format: ["webp", "jpg", "png", "svg"],
     presets: {
       default: {
         modifiers: {
@@ -51,6 +52,7 @@ export default defineNuxtConfig({
         },
       },
     },
+    staticFilename: "[name][ext]",
   },
   i18n: {
     defaultLocale: "ru",
@@ -67,7 +69,10 @@ export default defineNuxtConfig({
     build: {
       markdown: {
         highlight: {
-          theme: "monokai",
+          theme: {
+            default: "monokai",
+            dark: "monokai",
+          },
           preload: ["vue", "html", "ts", "js", "bash", "json", "scss", "yaml"],
         },
       },

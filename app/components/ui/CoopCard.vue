@@ -25,8 +25,9 @@ const props = defineProps<Props>();
       <p>{{ props.description }}</p>
     </div>
     <figure class="apw-coop-card__figure" aria-hidden="true">
-      <NuxtImg
+      <img
         :src="props.cover"
+        :alt="props.title"
         width="337"
         height="264"
         loading="lazy"

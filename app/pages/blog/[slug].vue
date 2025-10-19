@@ -13,16 +13,9 @@ const lang = computed<keyof Collections>(() => {
 
 const { data: post } = await useAsyncData(route.path, () => {
   return queryCollection(lang.value)
-    .path(`/${locale.value}${route.path}`)
+    .path(`${locale.value === "ru" ? "/ru" : ""}${route.path}`)
     .first() as Promise<TBlogPost>;
 });
-
-const fallback = "/img/fallback.jpg";
-const imageSrc = ref(post.value?.cover?.trim() || fallback);
-
-const onImgError = () => {
-  imageSrc.value = fallback;
-};
 
 const breadcrumbs = computed(() => {
   return [
@@ -71,25 +64,32 @@ useSeoMeta({
               <h1>{{ post?.title }}</h1>
               <NuxtImg
                 class="apw-post__cover"
-                :src="imageSrc"
+                :src="post?.cover"
+                format="webp"
                 width="768"
                 height="320"
-                :placeholder="fallback"
-                format="webp"
-                decoding="async"
+                :placeholder="15"
                 :alt="`${$t('article.cover.alt')}: ${post?.title}`"
+                decoding="async"
                 preload
                 fetchpriority="high"
-                @error="onImgError"
+                loading="eager"
               />
             </hgroup>
 
-            <ContentRenderer v-if="post" :value="post" class="apw-post__body" />
+            <ContentRenderer
+              v-if="post"
+              :value="post"
+              :hydrate="false"
+              class="apw-post__body"
+            />
             <time :datetime="post?.date">{{ formattedDate(post?.date) }}</time>
           </article>
         </div>
 
-        <AppToc :links="post?.body?.toc?.links" />
+        <ClientOnly>
+          <AppToc :links="post?.body?.toc?.links" />
+        </ClientOnly>
       </div>
     </section>
 

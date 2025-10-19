@@ -4,11 +4,6 @@ import { useRoute } from "vue-router";
 const route = useRoute();
 
 const isMenuOpen = ref<boolean>(false);
-const navClasses = computed<Record<string, boolean>>(() => {
-  return {
-    "apw-nav_open": isMenuOpen.value,
-  };
-});
 
 let isLocked: ReturnType<typeof useScrollLock> | null = null;
 
@@ -29,7 +24,7 @@ watch(
 
 <template>
   <div class="apw-menu">
-    <UiButtonMenu v-model="isMenuOpen" />
+    <UiButtonMenu v-model="isMenuOpen" :aria-label="$t('nav.menu.button')" />
     <AppNav :show-mobile-menu="isMenuOpen" />
   </div>
 </template>
