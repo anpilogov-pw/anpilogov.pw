@@ -9,9 +9,9 @@ const route = useRoute();
     <span class="apw-logo">Anpilogov<span class="highlight">/PW</span></span>
   </template>
   <template v-else>
-    <NuxtLink to="/" class="apw-logo">
+    <NuxtLinkLocale to="/" class="apw-logo">
       Anpilogov<span class="highlight">/PW</span>
-    </NuxtLink>
+    </NuxtLinkLocale>
   </template>
 </template>
 

@@ -37,5 +37,10 @@
   "coop.link.title": "Связаться",
   "coop.link.aria": "Связаться по направлению",
 
-  "article.cover.alt": "Обложка статьи"
+  "article.cover.alt": "Обложка статьи",
+
+  "companies.button.prev": "Предыдущая компани",
+  "companies.button.next": "Следующая компания",
+  "testimoials.button.prev": "Предыдущий отзыв",
+  "testimoials.button.next": "Следующий отзыв"
 }

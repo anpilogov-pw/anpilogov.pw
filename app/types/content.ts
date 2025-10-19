@@ -43,7 +43,7 @@ export type TBlogPost = TCollection & {
   path: string;
   date: string;
   tags: string[];
-  draft?: boolean;
+  draft: boolean;
   cover?: string;
 };
 
@@ -51,7 +51,7 @@ export type TCoopPost = TCollection & {
   title: string;
   description: string;
   path: string;
-  draft?: boolean;
+  draft: boolean;
   cover: string;
 };
 
@@ -61,6 +61,15 @@ export type TTestimonialPost = TCollection & {
   organization: string;
   avatar: string;
   testimonial: string;
+  date: string;
+  draft: boolean;
+};
+
+export type TCompaniesPost = TCollection & {
+  title: string;
+  period: string;
+  description: string;
+  tags: string[];
   date: string;
   draft: boolean;
 };

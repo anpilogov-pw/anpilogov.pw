@@ -37,5 +37,10 @@
   "coop.link.title": "Contact",
   "coop.link.aria": "Contact by direction",
 
-  "article.cover.alt": "Article cover"
+  "article.cover.alt": "Article cover",
+
+  "companies.button.prev": "Previous company",
+  "companies.button.next": "Next company",
+  "testimoials.button.prev": "Предыдущий отзыв",
+  "testimoials.button.next": "Следующий отзыв"
 }

@@ -81,5 +81,29 @@ export default defineContentConfig({
         draft: z.boolean().default(false),
       }),
     }),
+    companies_ru: defineCollection({
+      type: "page",
+      source: "ru/companies/*.md",
+      schema: z.object({
+        title: z.string(),
+        period: z.string(),
+        description: z.string(),
+        tags: z.array(z.string()).default([]),
+        date: z.coerce.date(),
+        draft: z.boolean().default(false),
+      }),
+    }),
+    companies_en: defineCollection({
+      type: "page",
+      source: "en/companies/*.md",
+      schema: z.object({
+        title: z.string(),
+        period: z.string(),
+        description: z.string(),
+        tags: z.array(z.string()).default([]),
+        date: z.coerce.date(),
+        draft: z.boolean().default(false),
+      }),
+    }),
   },
 });

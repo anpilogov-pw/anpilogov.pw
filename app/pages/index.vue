@@ -1,19 +1,6 @@
 <script lang="ts" setup>
 const { t } = useI18n();
 
-const breadcrumbs = computed(() => {
-  return [
-    {
-      label: t("breadcrumbs.home"),
-      to: `/`,
-    },
-    {
-      label: t("breadcrumbs.blog"),
-      to: null,
-    },
-  ];
-});
-
 useSeoMeta({
   title: t("page.index.title"),
   description: t("page.index.description"),
@@ -28,7 +15,9 @@ useSeoMeta({
       <AppTech />
     </AppSection>
     <AppDevider />
-    <AppSection id="companies" :title="$t('section.title.companies')" />
+    <AppSection id="companies" :title="$t('section.title.companies')">
+      <AppCompanies />
+    </AppSection>
     <AppDevider />
     <AppSection id="testimonials" :title="$t('section.title.testimonials')">
       <AppTestimonials />

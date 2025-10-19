@@ -1,6 +1,13 @@
+import { CONFIG } from "./app/constants";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
+  app: {
+    head: {
+      link: [...CONFIG.links],
+    },
+  },
   css: [
     "./app/assets/css/tailwind.postcss.scss",
     "./app/assets/css/main.scss",
@@ -28,6 +35,7 @@ export default defineNuxtConfig({
     "@nuxtjs/robots",
     "@nuxtjs/i18n",
     "@nuxt/content",
+    "@nuxtjs/critters",
   ],
   image: {
     quality: 80,
@@ -63,6 +71,11 @@ export default defineNuxtConfig({
           preload: ["vue", "html", "ts", "js", "bash", "json", "scss", "yaml"],
         },
       },
+    },
+  },
+  critters: {
+    config: {
+      preload: "swap",
     },
   },
 });

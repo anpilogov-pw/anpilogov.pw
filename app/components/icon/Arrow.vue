@@ -1,0 +1,18 @@
+<template>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="33"
+    height="32"
+    fill="none"
+    viewBox="0 0 33 32"
+    aria-hidden="true"
+  >
+    <path
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="1.5"
+      d="m27.167 16-8-8m8 8-8 8m8-8h-14m-7.334 0h3.334"
+    />
+  </svg>
+</template>
