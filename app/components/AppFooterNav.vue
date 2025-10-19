@@ -1,28 +1,22 @@
 <script setup lang="ts">
-import { useRoute } from "vue-router";
-
 type Props = {
   showLang?: boolean;
 };
 
-const route = useRoute();
-
 const props = withDefaults(defineProps<Props>(), {
   showLang: false,
 });
-
-const isHome = computed<boolean>(() => route.path === "/");
 </script>
 
 <template>
   <nav class="apw-nav">
-    <NuxtLinkLocale :to="isHome ? '#companies' : '/#companies'">
+    <NuxtLinkLocale to="/#companies">
       {{ $t("nav.link.companies") }}
     </NuxtLinkLocale>
-    <NuxtLinkLocale :to="isHome ? '#reviews' : '/#reviews'">
-      {{ $t("nav.link.reviews") }}
+    <NuxtLinkLocale to="/#testimonials">
+      {{ $t("nav.link.testimonials") }}
     </NuxtLinkLocale>
-    <NuxtLinkLocale :to="isHome ? '#coop' : '/#coop'">
+    <NuxtLinkLocale to="/#coop">
       {{ $t("nav.link.coop") }}
     </NuxtLinkLocale>
     <NuxtLinkLocale to="/blog">
@@ -31,7 +25,9 @@ const isHome = computed<boolean>(() => route.path === "/");
     <NuxtLinkLocale to="/privacy">
       {{ $t("nav.link.privacy") }}
     </NuxtLinkLocale>
-    <UiLangSwitcher v-if="props.showLang" />
+    <ClientOnly>
+      <UiLangSwitcher v-if="props.showLang" />
+    </ClientOnly>
   </nav>
 </template>
 

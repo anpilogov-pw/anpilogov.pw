@@ -1,6 +1,6 @@
 {
   "nav.link.companies": "Компании",
-  "nav.link.reviews": "Отзывы",
+  "nav.link.testimonials": "Отзывы",
   "nav.link.coop": "Сотрудничество",
   "nav.link.blog": "Блог",
   "nav.link.privacy": "Конфиденциальность",
@@ -9,7 +9,7 @@
   "breadcrumbs.blog": "Блог",
 
   "section.title.companies": "Компании",
-  "section.title.reviews": "Отзывы",
+  "section.title.testimonials": "Отзывы",
   "section.title.coop": "Сотрудничество",
   "section.title.blog": "Блог",
 
@@ -17,7 +17,7 @@
   "hero.title.highlight": "Frontend разработчик",
   "hero.text": "Специализируюсь на создании быстрых, удобных и поддерживаемых веб-приложений на базе современных технологий. В работе сочетаю инженерный подход с вниманием к деталям интерфейса, чтобы продукт был одновременно надёжным внутри и простым для пользователя снаружи.",
   "hero.action.companies": "Компании",
-  "hero.action.reviews": "Отзывы",
+  "hero.action.testimonials": "Отзывы",
   "hero.img.alt": "Анпилогов Артём — Frontend разработчик",
 
   "tech.title": "Технологии, которые я использую в разработки проектов",

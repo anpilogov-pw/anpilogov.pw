@@ -1,18 +1,9 @@
 <script setup lang="ts">
-import { useRoute } from "vue-router";
-
 type Props = {
-  showLang?: boolean;
   showMobileMenu: boolean;
 };
 
-const route = useRoute();
-
-const props = withDefaults(defineProps<Props>(), {
-  showLang: false,
-});
-
-const isHome = computed<boolean>(() => route.path === "/");
+const props = defineProps<Props>();
 
 const navClasses = computed<Record<string, boolean>>(() => {
   return {
@@ -23,17 +14,18 @@ const navClasses = computed<Record<string, boolean>>(() => {
 
 <template>
   <nav class="apw-nav" :class="navClasses">
-    <NuxtLinkLocale :to="isHome ? '#companies' : '/#companies'">
+    <NuxtLinkLocale to="/#companies">
       {{ $t("nav.link.companies") }}
     </NuxtLinkLocale>
-    <NuxtLinkLocale :to="isHome ? '#reviews' : '/#reviews'">
-      {{ $t("nav.link.reviews") }}
+    <NuxtLinkLocale to="/#testimonials">
+      {{ $t("nav.link.testimonials") }}
     </NuxtLinkLocale>
-    <NuxtLinkLocale :to="isHome ? '#coop' : '/#coop'">
+    <NuxtLinkLocale to="/#coop">
       {{ $t("nav.link.coop") }}
     </NuxtLinkLocale>
-    <NuxtLinkLocale to="/blog">{{ $t("nav.link.blog") }}</NuxtLinkLocale>
-    <UiLangSwitcher v-if="props.showLang" />
+    <NuxtLinkLocale to="/blog">
+      {{ $t("nav.link.blog") }}
+    </NuxtLinkLocale>
   </nav>
 </template>
 

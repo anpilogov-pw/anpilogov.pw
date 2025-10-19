@@ -11,8 +11,8 @@
           <UiButtonLink to="#companies">
             {{ $t("hero.action.companies") }}
           </UiButtonLink>
-          <UiButtonLink to="#reviews" type="outline">
-            {{ $t("hero.action.reviews") }}
+          <UiButtonLink to="#testimonials" type="outline">
+            {{ $t("hero.action.testimonials") }}
           </UiButtonLink>
         </div>
       </div>

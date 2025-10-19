@@ -55,5 +55,31 @@ export default defineContentConfig({
       type: "page",
       source: "en/privacy/*.md",
     }),
+    testimonial_ru: defineCollection({
+      type: "data",
+      source: "ru/testimonials/*.md",
+      schema: z.object({
+        fullname: z.string(),
+        post: z.string(),
+        organization: z.string(),
+        avatar: z.string().optional(),
+        testimonial: z.string(),
+        date: z.coerce.date(),
+        draft: z.boolean().default(false),
+      }),
+    }),
+    testimonial_en: defineCollection({
+      type: "data",
+      source: "en/testimonials/*.md",
+      schema: z.object({
+        fullname: z.string(),
+        post: z.string(),
+        organization: z.string(),
+        avatar: z.string().optional(),
+        testimonial: z.string(),
+        date: z.coerce.date(),
+        draft: z.boolean().default(false),
+      }),
+    }),
   },
 });

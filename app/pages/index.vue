@@ -8,7 +8,9 @@
     <AppDevider />
     <AppSection id="companies" :title="$t('section.title.companies')" />
     <AppDevider />
-    <AppSection id="reviews" :title="$t('section.title.reviews')" />
+    <AppSection id="testimonials" :title="$t('section.title.testimonials')">
+      <AppTestimonials />
+    </AppSection>
     <AppDevider />
     <AppSection id="coop" :title="$t('section.title.coop')">
       <AppCoop />

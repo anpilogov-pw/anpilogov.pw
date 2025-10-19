@@ -38,7 +38,6 @@ type MinimarkNode = [string, Record<string, any>, ...MinimarkChild[]];
 type MinimarkChild = string | MinimarkNode;
 
 export type TBlogPost = TCollection & {
-  id: string;
   title: string;
   description: string;
   path: string;
@@ -49,10 +48,19 @@ export type TBlogPost = TCollection & {
 };
 
 export type TCoopPost = TCollection & {
-  id: string;
   title: string;
   description: string;
   path: string;
   draft?: boolean;
   cover: string;
+};
+
+export type TTestimonialPost = TCollection & {
+  fullname: string;
+  post: string;
+  organization: string;
+  avatar: string;
+  testimonial: string;
+  date: string;
+  draft: boolean;
 };

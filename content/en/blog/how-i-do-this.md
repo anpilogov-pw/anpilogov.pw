@@ -4,7 +4,7 @@ description: "What I learned while building my website with Nuxt 4 and static co
 date: 2025-08-20
 tags: ["nuxt", "frontend"]
 draft: false
-cover: "/images/cover.jpg"
+cover: "/img/cover.jpg"
 ---
 
 Article text...
