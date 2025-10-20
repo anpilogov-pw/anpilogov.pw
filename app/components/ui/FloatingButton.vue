@@ -97,7 +97,7 @@ const onShare = async () => {
   @apply fixed bottom-4 right-4 z-10;
   @apply py-3 px-2 rounded-full;
   @apply text-white font-mono text-3 font-bold leading-[100%];
-  @apply shadow-apw-floating-light md:bg-gray-950 rounded-full;
+  @apply shadow-apw-floating-light bg-gray-950 rounded-full;
 }
 
 .apw-floating-bar__wrapper {

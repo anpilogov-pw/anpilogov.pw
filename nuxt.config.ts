@@ -1,6 +1,5 @@
 import { CONFIG } from "./app/constants";
 
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   app: {
@@ -16,6 +15,7 @@ export default defineNuxtConfig({
   site: {
     url: "https://anpilogov.pw/",
     name: "AnpilogovPW",
+    gzip: true,
   },
   devtools: { enabled: true },
   nitro: {
@@ -37,6 +37,7 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxtjs/critters",
     "nuxt-og-image",
+    "@nuxtjs/partytown",
   ],
   image: {
     provider: "ipx",
@@ -83,5 +84,8 @@ export default defineNuxtConfig({
     config: {
       preload: "swap",
     },
+  },
+  partytown: {
+    forward: ["ym"],
   },
 });

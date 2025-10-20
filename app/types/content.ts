@@ -59,7 +59,7 @@ export type TTestimonialPost = TCollection & {
   fullname: string;
   post: string;
   organization: string;
-  avatar: string;
+  avatar?: string;
   testimonial: string;
   date: string;
   draft: boolean;

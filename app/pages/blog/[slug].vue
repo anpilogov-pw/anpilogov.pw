@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import type { Collections } from "@nuxt/content";
+import { CONFIG } from "~/constants";
 import type { TBlogPost } from "~/types/content";
 
 const route = useRoute();
@@ -52,6 +53,15 @@ defineOgImageComponent("Frame", {
   description: post.value?.description,
   theme: "#6605C6",
   colorMode: "dark",
+});
+
+useHead({
+  link: [
+    {
+      rel: "canonical",
+      href: `${CONFIG.siteUrl}${route.path}`,
+    },
+  ],
 });
 </script>
 

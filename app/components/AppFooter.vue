@@ -18,14 +18,14 @@ import { CONFIG } from "~/constants";
 
 <style lang="scss" scoped>
 .apw-footer {
-  @apply flex flex-col items-start justify-start;
-  @apply xl:flex-row xl:justify-between gap-8;
+  @apply flex flex-col items-center justify-start;
+  @apply xl:items-start xl:flex-row xl:justify-between gap-8;
   @apply py-2.5 px-3 md:py-6 md:px-8 xl:px-[4.375rem];
   @apply border-x border-gray-200;
 }
 
 .apw-footer__container {
-  @apply flex flex-col items-start justify-start gap-6;
+  @apply flex flex-col items-center xl:items-start justify-start gap-6;
   @apply md:gap-3 xl:flex-row xl:gap-8 xl:max-w-3xl;
 }
 

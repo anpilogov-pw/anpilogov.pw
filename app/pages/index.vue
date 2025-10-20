@@ -1,5 +1,8 @@
 <script lang="ts" setup>
+import { CONFIG } from "~/constants";
+
 const { t } = useI18n();
+const { baseUrl } = useBaseURLI18n();
 
 useSeoMeta({
   title: t("page.index.title"),
@@ -7,10 +10,20 @@ useSeoMeta({
 });
 
 defineOgImageComponent("Frame", {
-  title: t("page.index.title"),
-  description: t("page.index.description"),
+  title: t("og.index.title"),
+  description: t("og.index.description"),
   theme: "#6605C6",
   colorMode: "dark",
+});
+
+useHead({
+  script: [...CONFIG.script],
+  link: [
+    {
+      rel: "canonical",
+      href: `${CONFIG.siteUrl}${baseUrl.value}`,
+    },
+  ],
 });
 </script>
 

@@ -1,9 +1,8 @@
 ---
-fullname: Королёв Яков
-post: АРТ-директор
-organization: ИД Московский комсомолец
-avatar: /img/cover.jpg
-testimonial: Отличается вниманием к деталям и архитектуре. Код понятный, поддерживаемый и работает без сюрпризов.
-date: 2024-7-15
+fullname: Yakov Korolyov
+post: Art Director
+organization: Moscow Komsomolets Publishing House
+testimonial: Distinguished by attention to detail and architecture. The code is clear, maintainable, and works without surprises.
+date: 2024-07-15
 draft: false
 ---

@@ -40,7 +40,7 @@ const formattedDate = computed(() => {
         format="webp"
         width="224"
         height="120"
-        :placeholder="fallback"
+        :placeholder="15"
         loading="lazy"
         decoding="async"
         :alt="`${$t('article.cover.alt')}: ${props.post.title}`"
@@ -96,6 +96,6 @@ const formattedDate = computed(() => {
 
 .apw-blog-card__hgroup p {
   @apply font-roboto font-normal text-3.5 leading-[150%] text-gray-500;
-  @apply line-clamp-4 md:line-clamp-6;
+  @apply line-clamp-4;
 }
 </style>

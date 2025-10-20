@@ -10,7 +10,7 @@ type Props = {
 const props = defineProps<Props>();
 
 const hasImageError = ref<boolean>(false);
-const imageSrc = ref(props.post.avatar?.trim() || "");
+const imageSrc = ref(props.post?.avatar?.trim() || "");
 
 const onImgError = () => {
   hasImageError.value = true;

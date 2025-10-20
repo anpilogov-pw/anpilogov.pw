@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import { CONFIG } from "~/constants";
+
+const route = useRoute();
 const { t } = useI18n();
 
 const breadcrumbs = computed(() => {
@@ -20,10 +23,19 @@ useSeoMeta({
 });
 
 defineOgImageComponent("Frame", {
-  title: t("page.blog.title"),
-  description: t("page.blog.description"),
+  title: t("og.blog.title"),
+  description: t("og.blog.description"),
   theme: "#6605C6",
   colorMode: "dark",
+});
+
+useHead({
+  link: [
+    {
+      rel: "canonical",
+      href: `${CONFIG.siteUrl}${route.path}`,
+    },
+  ],
 });
 </script>
 

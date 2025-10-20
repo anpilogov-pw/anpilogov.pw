@@ -1,20 +1,20 @@
 {
   "page.index.title": "AnpilogovPW — Frontend Developer Creating Clear and Fast Interfaces",
-  "page.index.description": "My name is Artyom Anpilogov. I specialize in building fast, user-friendly, and maintainable web applications using modern technologies. I combine an engineering mindset with attention to interface details — making products reliable inside and intuitive outside.",
+  "page.index.description": "My name is Artyom Anpilogov. I specialize in building fast, user-friendly, and maintainable web applications using modern technologies. My work combines an engineering mindset with attention to interface details to make products both reliable inside and simple for users outside.",
 
   "page.contacts.title": "Contacts — Get in Touch with Artyom Anpilogov",
-  "page.contacts.description": "Feel free to reach out to discuss a project or collaboration. Telegram, WhatsApp, email — always open for professional communication.",
+  "page.contacts.description": "Contact me to discuss a project or potential collaboration. Telegram, WhatsApp, or email — I’m always open to professional communication.",
 
   "page.blog.title": "Blog — Development Without Fluff | AnpilogovPW",
-  "page.blog.description": "Sharing experience in frontend development: architecture, optimization, and insights into Vue, React, and TypeScript. Honest and to the point.",
+  "page.blog.description": "Sharing my frontend development experience: architecture decisions, optimization, and nuances of Vue, React, and TypeScript. Honest and to the point.",
 
   "page.privacy.title": "Privacy Policy — AnpilogovPW",
-  "page.privacy.description": "How this website collects, uses, and protects user data. Transparent and fully compliant with the law.",
+  "page.privacy.description": "How this website collects, uses, and protects user data. Transparent and law-compliant.",
 
-  "nav.menu.button": "Site navigation",
+  "nav.menu.button": "Site menu",
   "nav.link.companies": "Companies",
-  "nav.link.testimonials": "Reviews",
-  "nav.link.coop": "Partnership",
+  "nav.link.testimonials": "Testimonials",
+  "nav.link.coop": "Cooperation",
   "nav.link.blog": "Blog",
   "nav.link.privacy": "Privacy",
   "nav.link.contacts": "Contacts",
@@ -24,53 +24,65 @@
   "breadcrumbs.contacts": "Contacts",
 
   "floating.message.copy": "Link copied",
-  "floating.share.error": "Share cancelled or failed",
-  "floating.region.label": "Reading quick actions bar",
+  "floating.share.error": "Share canceled or failed",
+  "floating.region.label": "Quick action panel while reading",
   "floating.share.label": "Share article",
-  "floating.share.title": "Share the article link",
-  "floating.scrollTop.label": "Scroll to top of the page",
-  "floating.scrollTop.title": "Scroll the page up",
+  "floating.share.title": "Share article link",
+  "floating.scrollTop.label": "Back to top",
+  "floating.scrollTop.title": "Scroll page to top",
   "floating.progress.label": "Article reading progress",
-  "floating.contacts.label": "Go to page Contacts",
+  "floating.contacts.label": "Go to contacts page",
   "floating.contacts.title": "Contacts",
 
   "section.title.companies": "Companies",
-  "section.title.testimonials": "Reviews",
-  "section.title.coop": "Partnership",
+  "section.title.testimonials": "Testimonials",
+  "section.title.coop": "Cooperation",
   "section.title.blog": "Blog",
 
-  "hero.title": "Artem Anpilogov",
+  "hero.title": "Artyom Anpilogov",
   "hero.title.highlight": "Frontend Developer",
-  "hero.text": "I specialize in building fast, user-friendly, and maintainable web applications using modern technologies. My work combines an engineering mindset with a keen eye for interface details to create products that are reliable under the hood and intuitive on the surface.",
+  "hero.text": "I specialize in building fast, user-friendly, and maintainable web applications using modern technologies. My work combines an engineering mindset with attention to interface details to make products both reliable inside and simple for users outside.",
   "hero.action.companies": "Companies",
-  "hero.action.testimonials": "Reviews",
-  "hero.img.alt": "Artem Anpilogov — Frontend Developer",
+  "hero.action.testimonials": "Testimonials",
+  "hero.img.alt": "Artyom Anpilogov — Frontend Developer",
 
-  "tech.title": "Technologies I use in project development",
+  "tech.title": "Technologies I Use in Project Development",
 
-  "coop.link.title": "Contact",
-  "coop.link.aria": "Contact by direction",
+  "coop.link.title": "Get in Touch",
+  "coop.link.aria": "Contact by field",
 
-  "article.cover.alt": "Article cover",
+  "article.cover.alt": "Article cover image",
 
   "companies.button.prev": "Previous company",
   "companies.button.next": "Next company",
 
-  "testimoials.button.prev": "Previous testimoial",
-  "testimoials.button.next": "Next testimoial",
+  "testimoials.button.prev": "Previous testimonial",
+  "testimoials.button.next": "Next testimonial",
 
-  "contacts.title": "Artem Anpilogov",
+  "contacts.title": "Artyom Anpilogov",
   "contacts.github": "GitHub",
   "contacts.telegram": "Telegram",
-  "contacts.aria.github": "Открыть Telegram Артёма Анпилогова",
-  "contacts.aria.telegram": "Открыть Telegram Артёма Анпилогова",
-  "contacts.aria.email": "Написать на почту Артёма Анпилогова",
+  "contacts.aria.github": "Open Artyom Anpilogov’s GitHub",
+  "contacts.aria.telegram": "Open Artyom Anpilogov’s Telegram",
+  "contacts.aria.email": "Send an email to Artyom Anpilogov",
 
-  "contacts.aria.home": "Вернуться на главную",
-  "contacts.link.home": "Главная",
+  "contacts.aria.home": "Return to homepage",
+  "contacts.link.home": "Home",
 
   "error.title": "404",
-  "error.subtitle": "Oops... This page doesn’t exist",
-  "error.description": "You may have mistyped the address or the page has been removed. But no worries — you can go back to the homepage.",
-  "error.backHome": "Go back home"
+  "error.subtitle": "Oops... this page doesn’t exist",
+  "error.description": "You might have mistyped the address, or the page was removed. No worries — you can go back to the homepage.",
+  "error.backHome": "Back to Home",
+
+  "og.index.title": "Artyom Anpilogov",
+  "og.index.description": "My name is Artyom Anpilogov. I specialize in building fast, user-friendly, and maintainable web applications using modern technologies.",
+
+  "og.blog.title": "Blog",
+  "og.blog.description": "Artyom Anpilogov’s blog about technology, development, and personal insights.",
+
+  "og.privacy.title": "Privacy Policy",
+  "og.privacy.description": "How this website collects, uses, and protects your anonymized data.",
+
+  "og.contacts.title": "Contacts",
+  "og.contacts.description": "Contact me if you have any questions or interesting proposals."
 }

@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import type { Collections } from "@nuxt/content";
+import { CONFIG } from "~/constants";
 import type { TCollection } from "~/types/content";
 
 const route = useRoute();
@@ -22,10 +23,19 @@ useSeoMeta({
 });
 
 defineOgImageComponent("Frame", {
-  title: t("page.privacy.title"),
-  description: t("page.privacy.description"),
+  title: t("og.privacy.title"),
+  description: t("og.privacy.description"),
   theme: "#6605C6",
   colorMode: "dark",
+});
+
+useHead({
+  link: [
+    {
+      rel: "canonical",
+      href: `${CONFIG.siteUrl}${route.path}`,
+    },
+  ],
 });
 </script>
 

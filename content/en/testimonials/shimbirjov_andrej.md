@@ -1,9 +1,8 @@
 ---
-fullname: Шимбирёв Андрей
-post: Руководитель практики
-organization: РЭУ им. Г.В. Плеханова
-avatar: /img/cover.jpg
-testimonial: Артём быстро вникает в задачу и предлагает решения, которые реально упрощают работу. Видно, что заботится не только о коде, но и о продукте в целом.
-date: 2020-7-20
+fullname: Andrey Shimbiryov
+post: Practice Supervisor
+organization: Plekhanov Russian University of Economics
+testimonial: Artyom quickly grasps the task and proposes solutions that genuinely simplify the work. It’s clear he cares not only about the code but about the product as a whole.
+date: 2020-07-20
 draft: false
 ---

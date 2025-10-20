@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import { CONFIG } from "~/constants";
+
+const route = useRoute();
 const { t } = useI18n();
 
 const breadcrumbs = computed(() => {
@@ -20,14 +23,23 @@ useSeoMeta({
 });
 
 defineOgImageComponent("Frame", {
-  title: t("page.contacts.title"),
-  description: t("page.contacts.description"),
+  title: t("og.contacts.title"),
+  description: t("og.contacts.description"),
   theme: "#6605C6",
   colorMode: "dark",
 });
 
 definePageMeta({
   layout: "contacts",
+});
+
+useHead({
+  link: [
+    {
+      rel: "canonical",
+      href: `${CONFIG.siteUrl}${route.path}`,
+    },
+  ],
 });
 </script>
 

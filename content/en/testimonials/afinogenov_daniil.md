@@ -1,9 +1,8 @@
 ---
-fullname: Афиногенов Даниил
-post: Технический директор
-organization: B2Box product flow
-avatar: /img/cover.jpg
-testimonial: Отличается вниманием к деталям и архитектуре. Код понятный, поддерживаемый и работает без сюрпризов.
+fullname: Daniil Afinogenov
+post: Technical Director
+organization: B2Box Product Flow
+testimonial: Distinguished by attention to detail and architecture. The code is clear, maintainable, and works without surprises.
 date: 2025-09-15
 draft: false
 ---

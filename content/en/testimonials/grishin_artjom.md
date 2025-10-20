@@ -1,9 +1,8 @@
 ---
-fullname: Гришин Артём
+fullname: Artyom Grishin
 post: CEO
 organization: Jawi
-avatar: /img/cover.jpg
-testimonial: Артём отличается вниманием к деталям, грамотным подходом к UX/UI и стремлением сделать продукт не просто «рабочим», а действительно удобным для пользователя.
+testimonial: Artyom stands out for his attention to detail, thoughtful UX/UI approach, and his drive to make the product not just “functional,” but truly user-friendly.
 date: 2025-10-20
 draft: false
 ---
