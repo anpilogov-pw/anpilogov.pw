@@ -84,5 +84,7 @@
   "og.privacy.description": "How this website collects, uses, and protects your anonymized data.",
 
   "og.contacts.title": "Contacts",
-  "og.contacts.description": "Contact me if you have any questions or interesting proposals."
+  "og.contacts.description": "Contact me if you have any questions or interesting proposals.",
+
+  "toc.title.contents": "Contents"
 }

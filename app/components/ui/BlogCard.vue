@@ -84,7 +84,7 @@ const formattedDate = computed(() => {
 .apw-blog-card__hgroup h3,
 .apw-blog-card__hgroup h2 {
   @apply font-sans font-bold text-4.5 leading-[120%] text-gray-900 my-2;
-  @apply line-clamp-2 transition-colors duration-300 ease-out;
+  @apply line-clamp-2 transition-colors duration-300 ease-out text-balance;
 }
 
 .apw-blog-card:hover .apw-blog-card__hgroup h3,

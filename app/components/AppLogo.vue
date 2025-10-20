@@ -5,7 +5,7 @@ const route = useRoute();
 </script>
 
 <template>
-  <template v-if="route.path === '/'">
+  <template v-if="route.path === '/' || route.path === '/en'">
     <span class="apw-logo">Anpilogov<span class="highlight">/PW</span></span>
   </template>
   <template v-else>

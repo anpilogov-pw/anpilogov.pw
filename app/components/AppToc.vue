@@ -12,7 +12,7 @@ defineProps<{
 
 <template>
   <aside v-if="links?.length" class="apw-toc">
-    <h3 class="apw-toc__title">Содержание</h3>
+    <h3 class="apw-toc__title">{{ $t("toc.title.contents") }}</h3>
     <nav>
       <ul>
         <li v-for="link in links" :key="link.id">
