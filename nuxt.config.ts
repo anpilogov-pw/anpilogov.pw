@@ -36,6 +36,7 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "@nuxt/content",
     "@nuxtjs/critters",
+    "nuxt-og-image",
   ],
   image: {
     provider: "ipx",

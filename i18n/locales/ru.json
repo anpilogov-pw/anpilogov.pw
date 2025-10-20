@@ -17,9 +17,22 @@
   "nav.link.coop": "Сотрудничество",
   "nav.link.blog": "Блог",
   "nav.link.privacy": "Конфиденциальность",
+  "nav.link.contacts": "Контакты",
 
   "breadcrumbs.home": "Главная",
   "breadcrumbs.blog": "Блог",
+  "breadcrumbs.contacts": "Контакты",
+
+  "floating.message.copy": "Ссылка скопирована",
+  "floating.share.error": "Поделиться отменено или не удалось",
+  "floating.region.label": "Панель быстрых действий при чтении",
+  "floating.share.label": "Поделиться статьёй",
+  "floating.share.title": "Поделиться ссылкой на статью",
+  "floating.scrollTop.label": "Вернуться к началу страницы",
+  "floating.scrollTop.title": "Прокрутить страницу вверх",
+  "floating.progress.label": "Прогресс чтения статьи",
+  "floating.contacts.label": "Перейти на страницу контакты",
+  "floating.contacts.title": "Контакты",
 
   "section.title.companies": "Компании",
   "section.title.testimonials": "Отзывы",
@@ -42,6 +55,22 @@
 
   "companies.button.prev": "Предыдущая компани",
   "companies.button.next": "Следующая компания",
+
   "testimoials.button.prev": "Предыдущий отзыв",
-  "testimoials.button.next": "Следующий отзыв"
+  "testimoials.button.next": "Следующий отзыв",
+
+  "contacts.title": "Анпилогов Артём",
+  "contacts.github": "GitHub",
+  "contacts.telegram": "Telegram",
+  "contacts.aria.github": "Открыть Telegram Артёма Анпилогова",
+  "contacts.aria.telegram": "Открыть Telegram Артёма Анпилогова",
+  "contacts.aria.email": "Написать на почту Артёма Анпилогова",
+
+  "contacts.aria.home": "Вернуться на главную",
+  "contacts.link.home": "Главная",
+
+  "error.title": "404",
+  "error.subtitle": "Ой... такой страницы нет",
+  "error.description": "Возможно, вы ошиблись в адресе или страница была удалена. Но ничего страшного — вы можете вернуться на главную.",
+  "error.backHome": "На главную"
 }

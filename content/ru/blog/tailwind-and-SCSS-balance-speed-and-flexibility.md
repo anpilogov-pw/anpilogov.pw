@@ -49,61 +49,10 @@ SCSS — про структуру и контроль.
 
 Я использую **Vite** как основной инструмент сборки — он идеально справляется с обеими технологиями. Подключить SCSS можно буквально одной строкой в `vite.config.js`, а Tailwind — стандартным плагином.
 
-```js
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import tailwindcss from 'tailwindcss'
-import autoprefixer from 'autoprefixer'
-
-export default defineConfig({
-  plugins: [vue()],
-  css: {
-    preprocessorOptions: {
-      scss: { additionalData: `@import "src/styles/_variables.scss";` },
-    },
-    postcss: {
-      plugins: [tailwindcss(), autoprefixer()],
-    },
-  },
-})
-```
-
 ### 2. Синхронизация токенов
 
 Чтобы дизайн оставался консистентным, я сделал **автогенерацию переменных SCSS из `tailwind.config.js`**.  
 Таким образом, все цвета, брейкпоинты и отступы из Tailwind становятся доступны в SCSS.
-
-Например:
-
-```js
-// tailwind.config.js
-export default {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#2563eb',
-        secondary: '#64748b',
-      },
-      screens: {
-        sm: '640px',
-        md: '768px',
-        lg: '1024px',
-      },
-    },
-  },
-}
-```
-
-Автоматически превращается в:
-
-```scss
-// _tailwind-vars.scss
-$color-primary: #2563eb;
-$color-secondary: #64748b;
-$breakpoint-sm: 640px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 1024px;
-```
 
 Это позволяет использовать те же значения и в утилитарных классах, и в компонентных стилях — без риска рассинхронизации.
 

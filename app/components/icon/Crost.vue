@@ -6,6 +6,7 @@
     fill="none"
     viewBox="0 0 32 32"
     aria-hidden="true"
+    focusable="false"
   >
     <path
       fill="currentColor"

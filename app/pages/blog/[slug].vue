@@ -46,6 +46,13 @@ useSeoMeta({
   title: post.value?.title,
   description: post.value?.description,
 });
+
+defineOgImageComponent("Frame", {
+  title: post.value?.title,
+  description: post.value?.description,
+  theme: "#6605C6",
+  colorMode: "dark",
+});
 </script>
 
 <template>
@@ -94,6 +101,7 @@ useSeoMeta({
     </section>
 
     <AppDevider />
+    <UiFloatingBar />
   </div>
 </template>
 
@@ -115,7 +123,7 @@ useSeoMeta({
 }
 
 .apw-post__hgroup {
-  @apply prose w-full;
+  @apply prose w-full hyphens-auto;
 }
 
 .apw-post__cover {

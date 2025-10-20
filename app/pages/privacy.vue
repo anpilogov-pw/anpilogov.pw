@@ -20,6 +20,13 @@ useSeoMeta({
   title: t("page.privacy.title"),
   description: t("page.privacy.description"),
 });
+
+defineOgImageComponent("Frame", {
+  title: t("page.privacy.title"),
+  description: t("page.privacy.description"),
+  theme: "#6605C6",
+  colorMode: "dark",
+});
 </script>
 
 <template>
@@ -47,6 +54,6 @@ useSeoMeta({
 }
 
 .apw-privacy__content {
-  @apply prose-sm md:prose max-w-[48rem] flex-1 m-0;
+  @apply prose-sm md:prose max-w-[48rem] flex-1 m-0 prose-h1:hyphens-auto;
 }
 </style>

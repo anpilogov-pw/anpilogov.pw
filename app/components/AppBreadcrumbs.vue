@@ -47,7 +47,7 @@ const props = defineProps<Props>();
     }
 
     a {
-      @apply text-gray-400 hover:text-gray-500 focus-visible:text-gray-500;
+      @apply text-gray-600 hover:text-purple-700 focus-visible:text-purple-700;
     }
 
     span {

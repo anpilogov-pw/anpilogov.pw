@@ -1,19 +1,20 @@
 <template>
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="33"
-    height="32"
+    width="24"
+    height="24"
     fill="none"
-    viewBox="0 0 33 32"
+    viewBox="0 0 24 24"
     aria-hidden="true"
     focusable="false"
   >
     <path
+      fill="#000"
       stroke="currentColor"
       stroke-linecap="round"
       stroke-linejoin="round"
-      stroke-width="1.5"
-      d="m27.167 16-8-8m8 8-8 8m8-8h-14m-7.334 0h3.334"
+      stroke-width="2"
+      d="m20 12-6.4-7v3.5C10.4 8.5 4 10.6 4 19c0-1.167 1.92-3.5 9.6-3.5V19l6.4-7Z"
     />
   </svg>
 </template>

@@ -34,7 +34,4 @@ const props = withDefaults(defineProps<Props>(), {
   @apply px-3 md:px-8 xl:px-[4.375rem];
   @apply font-bold text-6 md:text-8 text-gray-900 leading-[150%];
 }
-
-.apw-section__body {
-}
 </style>

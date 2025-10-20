@@ -5,6 +5,13 @@ useSeoMeta({
   title: t("page.index.title"),
   description: t("page.index.description"),
 });
+
+defineOgImageComponent("Frame", {
+  title: t("page.index.title"),
+  description: t("page.index.description"),
+  theme: "#6605C6",
+  colorMode: "dark",
+});
 </script>
 
 <template>
@@ -31,5 +38,6 @@ useSeoMeta({
       <AppBlog />
     </AppSection>
     <AppDevider />
+    <UiFloatingButton />
   </div>
 </template>

@@ -17,9 +17,22 @@
   "nav.link.coop": "Partnership",
   "nav.link.blog": "Blog",
   "nav.link.privacy": "Privacy",
+  "nav.link.contacts": "Contacts",
 
-  "breadcrumbs.home": "Главная",
-  "breadcrumbs.blog": "Блог",
+  "breadcrumbs.home": "Home",
+  "breadcrumbs.blog": "Blog",
+  "breadcrumbs.contacts": "Contacts",
+
+  "floating.message.copy": "Link copied",
+  "floating.share.error": "Share cancelled or failed",
+  "floating.region.label": "Reading quick actions bar",
+  "floating.share.label": "Share article",
+  "floating.share.title": "Share the article link",
+  "floating.scrollTop.label": "Scroll to top of the page",
+  "floating.scrollTop.title": "Scroll the page up",
+  "floating.progress.label": "Article reading progress",
+  "floating.contacts.label": "Go to page Contacts",
+  "floating.contacts.title": "Contacts",
 
   "section.title.companies": "Companies",
   "section.title.testimonials": "Reviews",
@@ -42,6 +55,22 @@
 
   "companies.button.prev": "Previous company",
   "companies.button.next": "Next company",
-  "testimoials.button.prev": "Предыдущий отзыв",
-  "testimoials.button.next": "Следующий отзыв"
+
+  "testimoials.button.prev": "Previous testimoial",
+  "testimoials.button.next": "Next testimoial",
+
+  "contacts.title": "Artem Anpilogov",
+  "contacts.github": "GitHub",
+  "contacts.telegram": "Telegram",
+  "contacts.aria.github": "Открыть Telegram Артёма Анпилогова",
+  "contacts.aria.telegram": "Открыть Telegram Артёма Анпилогова",
+  "contacts.aria.email": "Написать на почту Артёма Анпилогова",
+
+  "contacts.aria.home": "Вернуться на главную",
+  "contacts.link.home": "Главная",
+
+  "error.title": "404",
+  "error.subtitle": "Oops... This page doesn’t exist",
+  "error.description": "You may have mistyped the address or the page has been removed. But no worries — you can go back to the homepage.",
+  "error.backHome": "Go back home"
 }

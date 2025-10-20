@@ -33,6 +33,10 @@ module.exports = {
           "0 19px 5px 0 rgba(0, 0, 0, 0.00), 0 12px 5px 0 rgba(0, 0, 0, 0.01), 0 7px 4px 0 rgba(0, 0, 0, 0.05), 0 3px 3px 0 rgba(0, 0, 0, 0.09), 0 1px 2px 0 rgba(0, 0, 0, 0.10)",
         "apw-coop-card":
           "0 19px 5px 0 rgba(0, 0, 0, 0.00), 0 12px 5px 0 rgba(0, 0, 0, 0.01), 0 7px 4px 0 rgba(0, 0, 0, 0.05), 0 3px 3px 0 rgba(0, 0, 0, 0.09), 0 1px 2px 0 rgba(0, 0, 0, 0.10)",
+        "apw-floating":
+          "0 72px 20px 0 rgba(0, 0, 0, 0.01), 0 46px 19px 0 rgba(0, 0, 0, 0.05), 0 26px 16px 0 rgba(0, 0, 0, 0.16), 0 12px 12px 0 rgba(0, 0, 0, 0.28), 0 3px 6px 0 rgba(0, 0, 0, 0.32)",
+        "apw-floating-light":
+          "0 50px 14px 0 rgba(0, 0, 0, 0.00), 0 32px 13px 0 rgba(0, 0, 0, 0.01), 0 18px 11px 0 rgba(0, 0, 0, 0.05), 0 8px 8px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.09)",
       },
     },
   },

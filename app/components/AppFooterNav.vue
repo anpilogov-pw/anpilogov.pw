@@ -22,6 +22,9 @@ const props = withDefaults(defineProps<Props>(), {
     <NuxtLinkLocale to="/blog">
       {{ $t("nav.link.blog") }}
     </NuxtLinkLocale>
+    <NuxtLinkLocale to="/contacts">
+      {{ $t("nav.link.contacts") }}
+    </NuxtLinkLocale>
     <NuxtLinkLocale to="/privacy">
       {{ $t("nav.link.privacy") }}
     </NuxtLinkLocale>
@@ -33,7 +36,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 <style lang="scss" scoped>
 .apw-nav {
-  @apply flex flex-col items-center justify-start gap-5;
+  @apply flex flex-col flex-wrap items-center justify-start gap-5;
   @apply md:flex-row md:items-center md:justify-center xl:justify-start;
 }
 

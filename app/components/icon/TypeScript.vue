@@ -6,6 +6,7 @@
     fill="none"
     viewBox="0 0 64 64"
     aria-hidden="true"
+    focusable="false"
   >
     <g clip-path="url(#a)">
       <path fill="#fff" d="M0 0h64v64H0V0Z" />
