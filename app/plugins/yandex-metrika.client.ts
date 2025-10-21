@@ -3,6 +3,10 @@
 
 export default defineNuxtPlugin(() => {
   if (import.meta.server) return;
+
+  const htmlLang = document.documentElement.getAttribute("lang") || "ru";
+  if (htmlLang !== "ru") return;
+
   (function (m: any, e: any, t: any, r: any, i: any, k?: any, a?: any) {
     m[i] =
       m[i] ||

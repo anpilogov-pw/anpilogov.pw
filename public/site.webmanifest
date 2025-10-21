@@ -52,10 +52,25 @@
       "src": "/icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable"
     }
   ],
-
+  "screenshots": [
+    {
+      "src": "/screenshots/mobile.jpg",
+      "sizes": "720x1280",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Мобильная версия сайта"
+    },
+    {
+      "src": "/screenshots/desktop.jpg",
+      "sizes": "1920x1080",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Десктопная версия сайта"
+    }
+  ],
   "categories": ["portfolio", "developer", "frontend", "personal"],
   "id": "com.artem.devsite",
   "prefer_related_applications": false

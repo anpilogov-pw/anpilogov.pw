@@ -33,7 +33,6 @@ const {
 
 <template>
   <div class="apw-companies">
-    <h1>{{ `companies-${collectionName}` }}</h1>
     <div ref="emblaRef" class="embla">
       <ul
         class="apw-company-list embla__container"
