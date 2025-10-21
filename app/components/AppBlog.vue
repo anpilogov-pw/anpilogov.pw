@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import type { TBlogPost } from "~/types/content";
 
+const { locale } = useI18n();
+
 type Props = {
   postLimit?: number;
   cardTitleTag?: "h2" | "h3";
@@ -11,10 +13,19 @@ const props = withDefaults(defineProps<Props>(), {
   cardTitleTag: "h3",
 });
 
-const { data: posts } = useLocalizedCollection<TBlogPost[]>(
-  "blog",
-  "date",
-  props.postLimit
+const collectionName = computed<"blog_ru" | "blog_en">(() => {
+  return locale.value ? `blog_${locale.value}` : "blog_ru";
+});
+
+const { data: posts } = await useAsyncData(
+  `blog-${collectionName.value}-limit-${props.postLimit}`,
+  () => {
+    return queryCollection(collectionName.value)
+      .where("draft", "=", false)
+      .order("date", "DESC")
+      .limit(props.postLimit)
+      .all() as Promise<TBlogPost[]>;
+  }
 );
 </script>
 

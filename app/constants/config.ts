@@ -94,21 +94,11 @@ export const CONFIG = {
       content: "#ffffff",
     },
   ],
-  script: [
-    {
-      type: "application/ld+json",
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Person",
-        name: "Артём",
-        jobTitle: "Frontend-разработчик",
-        url: "https://anpilogov.pw/",
-        sameAs: [
-          "https://github.com/anpilogov-pw",
-          "https://t.me/anpilogov_artyom",
-        ],
-      }),
-    },
-  ],
   siteUrl: "https://anpilogov.pw",
+  ogImage: {
+    defaultTheme: {
+      colorMode: "dark",
+      theme: "#3D578D",
+    },
+  },
 } as const;

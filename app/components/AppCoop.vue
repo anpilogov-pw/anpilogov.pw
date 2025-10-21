@@ -1,7 +1,21 @@
 <script lang="ts" setup>
 import type { TCoopPost } from "~/types/content";
 
-const { data: posts } = useLocalizedCollection<TCoopPost[]>("coop", "title");
+const { locale } = useI18n();
+
+const collectionName = computed<"coop_ru" | "coop_en">(() => {
+  return locale.value ? `coop_${locale.value}` : "coop_ru";
+});
+
+const { data: posts } = await useAsyncData(
+  `coop-${collectionName.value}`,
+  () => {
+    return queryCollection(collectionName.value)
+      .where("draft", "=", false)
+      .order("title", "DESC")
+      .all() as Promise<TCoopPost[]>;
+  }
+);
 </script>
 
 <template>
@@ -9,7 +23,7 @@ const { data: posts } = useLocalizedCollection<TCoopPost[]>("coop", "title");
     <ul class="apw-coop-list">
       <li
         v-for="(post, index) in posts"
-        :key="post.id"
+        :key="`coop-${index}-${post.id}`"
         class="apw-coop-list__item"
       >
         <UiCoopCard

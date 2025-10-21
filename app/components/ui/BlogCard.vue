@@ -46,7 +46,9 @@ const formattedDate = computed(() => {
         :alt="`${$t('article.cover.alt')}: ${props.post.title}`"
         @error="onImgError"
       />
-      <time :datetime="props.post.date">{{ formattedDate }}</time>
+      <time :datetime="props.post.date">
+        {{ formattedDate }}
+      </time>
     </header>
     <div class="apw-blog-card__hgroup">
       <NuxtLinkLocale :to="localizedPath(props.post.path)">
@@ -64,7 +66,7 @@ const formattedDate = computed(() => {
   @apply hover:ring-0 focus-within:ring-0;
   @apply hover:shadow-apw-coop-card focus-within:shadow-apw-coop-card;
   @apply hover:-translate-y-1 focus-within:-translate-y-1;
-  @apply w-full h-80 md:h-[25rem];
+  @apply w-full h-[25rem];
 }
 
 .apw-blog-card__header {
@@ -96,6 +98,6 @@ const formattedDate = computed(() => {
 
 .apw-blog-card__hgroup p {
   @apply font-roboto font-normal text-3.5 leading-[150%] text-gray-500;
-  @apply line-clamp-4;
+  @apply line-clamp-5;
 }
 </style>

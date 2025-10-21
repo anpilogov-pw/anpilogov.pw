@@ -1,27 +1,32 @@
 import { CONFIG } from "./app/constants";
 
 export default defineNuxtConfig({
+  devtools: { enabled: true },
   compatibilityDate: "2025-07-15",
   app: {
     head: {
       link: [...CONFIG.links],
     },
   },
-  css: [
-    "./app/assets/css/tailwind.postcss.scss",
-    "./app/assets/css/main.scss",
-    "./app/assets/css/fonts.scss",
-  ],
-  site: {
-    url: "https://anpilogov.pw/",
-    name: "AnpilogovPW",
-    gzip: true,
+  css: ["./app/assets/css/main.scss"],
+  tailwindcss: {
+    cssPath: "./app/assets/css/tailwind.css",
+    configPath: "tailwind.config.ts",
   },
-  devtools: { enabled: true },
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ["/robots.txt"],
+      routes: [
+        "/robots.txt",
+        "/",
+        "/blog",
+        "/contacts",
+        "/privacy",
+        "/en",
+        "/en/blog",
+        "/en/contacts",
+        "/en/privacy",
+      ],
       failOnError: false,
     },
   },
@@ -37,7 +42,7 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxtjs/critters",
     "nuxt-og-image",
-    "@nuxtjs/partytown",
+    "@nuxt/icon",
   ],
   image: {
     provider: "ipx",
@@ -62,6 +67,7 @@ export default defineNuxtConfig({
       { code: "ru", language: "ru-RU", file: "ru.json", name: "Русский" },
       { code: "en", language: "en-US", file: "en.json", name: "English" },
     ],
+    strategy: "prefix_except_default",
   },
   content: {
     watch: {
@@ -85,7 +91,31 @@ export default defineNuxtConfig({
       preload: "swap",
     },
   },
-  partytown: {
-    forward: ["ym"],
+  ogImage: {
+    enabled: true,
+    defaults: {
+      width: 1200,
+      height: 600,
+      emojis: "noto",
+      renderer: "satori",
+      component: "NuxtSeo",
+      cacheMaxAgeSeconds: 60 * 60 * 24 * 3,
+    },
+    fonts: ["Inter:400", "Inter:700"],
+    runtimeCacheStorage: true,
+  },
+  $production: {
+    site: {
+      url: "https://anpilogov.pw/",
+      name: "AnpilogovPW",
+      gzip: true,
+    },
+  },
+  $development: {
+    site: {
+      url: "http://localhost:3000/",
+      name: "AnpilogovPW",
+      gzip: false,
+    },
   },
 });

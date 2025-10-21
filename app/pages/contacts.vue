@@ -1,6 +1,8 @@
 <script lang="ts" setup>
+import { useSchemaOrg } from "~/composables";
 import { CONFIG } from "~/constants";
 
+const schema = useSchemaOrg();
 const route = useRoute();
 const { t } = useI18n();
 
@@ -22,11 +24,10 @@ useSeoMeta({
   description: t("page.contacts.description"),
 });
 
-defineOgImageComponent("Frame", {
-  title: t("og.contacts.title"),
-  description: t("og.contacts.description"),
-  theme: "#6605C6",
-  colorMode: "dark",
+defineOgImageComponent("NuxtSeo", {
+  title: String(t("og.contacts.title")),
+  description: String(t("og.contacts.description")),
+  ...CONFIG.ogImage.defaultTheme,
 });
 
 definePageMeta({
@@ -41,6 +42,7 @@ useHead({
     },
   ],
 });
+schema.contact();
 </script>
 
 <template>

@@ -1,20 +1,18 @@
 <script lang="ts" setup>
-import type { Collections } from "@nuxt/content";
+import { useSchemaOrg } from "~/composables";
 import { CONFIG } from "~/constants";
-import type { TCollection } from "~/types/content";
 
+const schema = useSchemaOrg();
 const route = useRoute();
 const { locale, t } = useI18n();
 
-const collectionName = computed<keyof Collections>(() => {
-  return (
-    locale.value ? `privacy_${locale.value}` : "privacy_ru"
-  ) as keyof Collections;
+const collectionName = computed<"privacy_ru" | "privacy_en">(() => {
+  return locale.value ? `privacy_${locale.value}` : "privacy_ru";
 });
 
 const { data: page } = await useAsyncData(
-  route.path,
-  () => queryCollection(collectionName.value).first() as Promise<TCollection>
+  `privacy-${collectionName.value}`,
+  () => queryCollection(collectionName.value).first()
 );
 
 useSeoMeta({
@@ -22,11 +20,10 @@ useSeoMeta({
   description: t("page.privacy.description"),
 });
 
-defineOgImageComponent("Frame", {
-  title: t("og.privacy.title"),
-  description: t("og.privacy.description"),
-  theme: "#6605C6",
-  colorMode: "dark",
+defineOgImageComponent("NuxtSeo", {
+  title: String(t("og.privacy.title")),
+  description: String(t("og.privacy.description")),
+  ...CONFIG.ogImage.defaultTheme,
 });
 
 useHead({
@@ -37,6 +34,7 @@ useHead({
     },
   ],
 });
+schema.privacy();
 </script>
 
 <template>
@@ -51,6 +49,9 @@ useHead({
       </div>
     </AppSection>
     <AppDevider />
+    <ClientOnly>
+      <UiFloatingButton />
+    </ClientOnly>
   </div>
 </template>
 

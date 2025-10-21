@@ -3,10 +3,20 @@ import emblaCarouselVue from "embla-carousel-vue";
 import AutoScroll from "embla-carousel-auto-scroll";
 import type { TTestimonialPost } from "~/types/content";
 
-const { data: posts } = useLocalizedCollection<TTestimonialPost[]>(
-  "testimonial",
-  "date",
-  -1
+const { locale } = useI18n();
+
+const collectionName = computed<"testimonial_ru" | "testimonial_en">(() => {
+  return locale.value ? `testimonial_${locale.value}` : "testimonial_ru";
+});
+
+const { data: posts } = await useAsyncData(
+  `testimonial-${collectionName.value}`,
+  () => {
+    return queryCollection(collectionName.value)
+      .where("draft", "=", false)
+      .order("date", "DESC")
+      .all() as Promise<TTestimonialPost[]>;
+  }
 );
 
 const [emblaRef] = emblaCarouselVue(
@@ -34,8 +44,8 @@ const [emblaRef] = emblaCarouselVue(
         aria-label="Отзывы клиентов"
       >
         <li
-          v-for="post in posts"
-          :key="post.id"
+          v-for="(post, index) in posts"
+          :key="`testimonial-${index}-${post.id}`"
           class="apw-testimonial-list__item embla__slide"
         >
           <UiTestimonialCard :post="post" />

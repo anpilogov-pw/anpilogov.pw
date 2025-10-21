@@ -1,22 +1,23 @@
 <script lang="ts" setup>
-import type { Collections } from "@nuxt/content";
+import { useSchemaOrg } from "~/composables";
 import { CONFIG } from "~/constants";
-import type { TBlogPost } from "~/types/content";
 
+const schema = useSchemaOrg();
 const route = useRoute();
 const { locale, t } = useI18n();
 
-const lang = computed<keyof Collections>(() => {
-  return (
-    locale.value ? `blog_${locale.value}` : "blog_ru"
-  ) as keyof Collections;
+const collectionName = computed<"blog_ru" | "blog_en">(() => {
+  return locale.value ? `blog_${locale.value}` : "blog_ru";
 });
 
-const { data: post } = await useAsyncData(route.path, () => {
-  return queryCollection(lang.value)
-    .path(`${locale.value === "ru" ? "/ru" : ""}${route.path}`)
-    .first() as Promise<TBlogPost>;
-});
+const { data: post } = await useAsyncData(
+  `post-${route.params.slug}-${collectionName.value}`,
+  () => {
+    return queryCollection(collectionName.value)
+      .path(`${locale.value === "ru" ? "/ru" : ""}${route.path}`)
+      .first();
+  }
+);
 
 const breadcrumbs = computed(() => {
   return [
@@ -32,27 +33,26 @@ const breadcrumbs = computed(() => {
   ];
 });
 
-const formattedDate = (articleDate?: string) => {
-  if (!articleDate) return "";
-  const date = new Date(articleDate);
+const formattedDate = computed(() => {
+  if (!post.value?.date) return "";
+  const date = new Date(post.value.date);
 
   return new Intl.DateTimeFormat(locale.value, {
     month: "long",
     day: "numeric",
     year: "numeric",
   }).format(date);
-};
+});
 
 useSeoMeta({
   title: post.value?.title,
   description: post.value?.description,
 });
 
-defineOgImageComponent("Frame", {
-  title: post.value?.title,
-  description: post.value?.description,
-  theme: "#6605C6",
-  colorMode: "dark",
+defineOgImageComponent("NuxtSeo", {
+  title: post.value?.title ?? String(t("og.blog.title")),
+  description: post.value?.description ?? String(t("og.blog.description")),
+  ...CONFIG.ogImage.defaultTheme,
 });
 
 useHead({
@@ -63,6 +63,7 @@ useHead({
     },
   ],
 });
+schema.article(post.value ?? {});
 </script>
 
 <template>
@@ -94,24 +95,21 @@ useHead({
               />
             </hgroup>
 
-            <ContentRenderer
-              v-if="post"
-              :value="post"
-              :hydrate="false"
-              class="apw-post__body"
-            />
-            <time :datetime="post?.date">{{ formattedDate(post?.date) }}</time>
+            <ContentRenderer v-if="post" :value="post" class="apw-post__body" />
+            <time :datetime="post?.date">
+              {{ formattedDate }}
+            </time>
           </article>
         </div>
 
-        <ClientOnly>
-          <AppToc :links="post?.body?.toc?.links" />
-        </ClientOnly>
+        <AppToc :links="post?.body?.toc?.links" />
       </div>
     </section>
 
     <AppDevider />
-    <UiFloatingBar />
+    <ClientOnly>
+      <UiFloatingBar />
+    </ClientOnly>
   </div>
 </template>
 

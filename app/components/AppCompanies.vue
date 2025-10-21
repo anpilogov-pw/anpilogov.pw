@@ -2,10 +2,20 @@
 import emblaCarouselVue from "embla-carousel-vue";
 import type { TCompaniesPost } from "~/types/content";
 
-const { data: posts } = useLocalizedCollection<TCompaniesPost[]>(
-  "companies",
-  "date",
-  -1
+const { locale } = useI18n();
+
+const collectionName = computed<"companies_ru" | "companies_en">(() => {
+  return locale.value ? `companies_${locale.value}` : "companies_ru";
+});
+
+const { data: posts } = await useAsyncData(
+  `companies-${collectionName.value}`,
+  () => {
+    return queryCollection(collectionName.value)
+      .where("draft", "=", false)
+      .order("date", "DESC")
+      .all() as Promise<TCompaniesPost[]>;
+  }
 );
 
 const [emblaRef, emblaApi] = emblaCarouselVue({
@@ -23,14 +33,15 @@ const {
 
 <template>
   <div class="apw-companies">
+    <h1>{{ `companies-${collectionName}` }}</h1>
     <div ref="emblaRef" class="embla">
       <ul
         class="apw-company-list embla__container"
         aria-label="Отзывы клиентов"
       >
         <li
-          v-for="post in posts"
-          :key="post.id"
+          v-for="(post, index) in posts"
+          :key="`company-${index}-${post.id}`"
           class="apw-company-list__item embla__slide"
         >
           <UiCompanyCard v-if="post" :post="post" />

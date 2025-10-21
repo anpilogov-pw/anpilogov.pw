@@ -11,6 +11,8 @@
   ExpiresByType image/svg+xml "access plus 1 year"
   ExpiresByType font/woff2 "access plus 1 year"
   ExpiresByType font/ttf "access plus 1 year"
+  
+  AddType application/wasm .wasm
 </IfModule>
 
 <IfModule mod_headers.c>

@@ -1,6 +1,8 @@
 <script lang="ts" setup>
+import { useSchemaOrg } from "~/composables";
 import { CONFIG } from "~/constants";
 
+const schema = useSchemaOrg();
 const route = useRoute();
 const { t } = useI18n();
 
@@ -22,11 +24,10 @@ useSeoMeta({
   description: t("page.blog.description"),
 });
 
-defineOgImageComponent("Frame", {
-  title: t("og.blog.title"),
-  description: t("og.blog.description"),
-  theme: "#6605C6",
-  colorMode: "dark",
+defineOgImageComponent("NuxtSeo", {
+  title: String(t("og.blog.title")),
+  description: String(t("og.blog.description")),
+  ...CONFIG.ogImage.defaultTheme,
 });
 
 useHead({
@@ -37,6 +38,7 @@ useHead({
     },
   ],
 });
+schema.blog();
 </script>
 
 <template>
@@ -47,6 +49,9 @@ useHead({
       <AppBlog :post-limit="-1" card-title-tag="h2" />
     </AppSection>
     <AppDevider />
+    <ClientOnly>
+      <UiFloatingButton />
+    </ClientOnly>
   </div>
 </template>
 
